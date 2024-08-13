@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 85px;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  background: #161a2d;
+  padding: 25px 20px;
+  transition: all 0.4s ease;
+  z-index: 1000; /* Ensure sidebar is on top */
+}
+
+.sidebar:hover {
+  width: 260px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar-header img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 23px;
+}
+
+.sidebar-links h4 {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+.sidebar-links h4 span {
+  opacity: 0;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+  opacity: 1;
+}
+
+.sidebar-links .menu-separator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #4f52ba;
+  transform: scaleX(1);
+  transform: translateY(-50%);
+  transition-delay: 0.2s;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+  transition-delay: 0s;
+  transform: scaleX(0);
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-top: 20px;
+  height: 80%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar-links li a:hover {
+  color: #161a2d;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.user-account {
+  margin-top: auto;
+  padding: 12px 10px;
+  margin-left: -10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  color: #161a2d;
+}
+
+.user-profile img {
+  width: 42px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-profile h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-profile span {
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.user-detail {
+  margin-left: 23px;
+  white-space: nowrap;
+}
+
+.sidebar:hover .user-account {
+  background: #fff;
+  border-radius: 4px;
+}
+
+.background-overlay {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  margin-left: 85px; /* Adjusts for sidebar width */
+  padding: 20px;
+  width: calc(100% - 85px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+.text-content {
+  text-align: center;
+  color: #2c3350;
+  position: relative;
+  z-index: 1; /* Ensure text content is above the overlay */
+}
+
+.text-content .text {
+  font-size: 27px;
+}
+
+.text-content .name {
+  font-size: 75px;
+  font-weight: 600;
+  margin: -20px 0 0 -3px;
+}
+
+.text-content .job {
+  font-size: 40px;
+  margin: 5px 0;
+  margin-top: -4px;
+  display: flex;
+  justify-content: center;
+}
+
+.text-content .typing-text {
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #1de2d1;
+  animation: typing 5s steps(15) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0ch;
+  }
+  50% {
+    width: 15ch;
+  }
+  100% {
+    width: 0ch;
+  }
+}
+
+.text-content .job .one,
+.text-content .job .two {
+  color: #1de2d1;
+}
+
+.buttons {
+  margin: 20px 0 0 0;
+}
+
+.text-content .buttons button {
+  outline: none;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px; /* Increase button font size */
+  color: #fff;
+  padding: 12px 24px; /* Increase button size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(135deg, #2AFADF 10%, #C346C2 100%);
+}
+
+.buttons button:hover {
+  transform: scale(0.97);
+}
+
+.character {
+  position: absolute;
+  right: 20px; /* Adjust positioning as needed */
+  bottom: 20px; /* Adjust positioning as needed */
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Responsiveness for tablets and smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar:hover {
+    width: 220px;
+  }
+
+  .content {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+  }
+
+  .sidebar-links li a {
+    font-size: 14px; /* Reduz o tamanho do texto do menu */
+    padding: 10px 5px;
+  }
+
+  .sidebar-links h4 {
+    font-size: 12px; /* Reduz o tamanho das seções */
+    margin: 5px 0;
+  }
+
+  .text-content .text {
+    font-size: 22px;
+  }
+
+  .text-content .name {
+    font-size: 50px;
+  }
+
+  .text-content .job {
+    font-size: 30px;
+  }
+
+  .text-content .buttons button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .character {
+    width: 150px;
+  }
+
+  .user-profile img {
+    width: 36px; /* Diminui a imagem de perfil no modo tablet */
+  }
+}
+
+/* Responsiveness for mobile screens */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar:hover {
+    width: 200px;
+  }
+
+  .content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  .sidebar-links li a {
+    font-size: 12px;
+    padding: 8px 5px;
+  }
+
+  .sidebar-links li a .material-symbols-outlined {
+    font-size: 20px; /* Reduz o tamanho dos ícones */
+    margin-left: -5px; /* Recua os ícones para a esquerda */
+  }
+
+  .sidebar-links h4 {
+    font-size: 10px;
+    margin: 5px 0;
+  }
+
+  .sidebar .sidebar-header img {
+    width: 50px; /* Mantém o tamanho da logo padrão */
+    transform: scale(1.5); /* Aumenta a logo sem afetar o layout */
+    transform-origin: center center; /* Centraliza o aumento da logo */
+    margin-left: 1px;
+  }
+
+  .text-content .text {
+    font-size: 18px;
+  }
+
+  .text-content .name {
+    font-size: 35px;
+    margin-top: 10px; /* Adiciona espaço entre o nome e o texto acima */
+  }
+
+  .text-content .job {
+    font-size: 24px;
+  }
+
+  .text-content .buttons button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .character {
+    width: 120px;
+  }
+
+  .user-profile img {
+    width: 32px; /* Reduz o tamanho da imagem do perfil */
+  }
+
+  .user-profile {
+    padding-left: 1px; /* Recua a imagem de perfil para a esquerda */
+  }
+
+  .user-detail {
+    margin-left: 6px; /* Ajusta o recuo do nome para que fique visível */
+  }
+  }
+    
