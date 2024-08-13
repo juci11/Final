@@ -1,0 +1,212 @@
+/* Reset de margens e preenchimento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.language-switch {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile input {
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image {
+    background-image: url('astronaut.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    clip-path: ellipse(75% 100% at 50% 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    margin-left: 50px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.circle-button {
+    width: 120px;
+    height: 120px;
+    background-color: #f7c744;
+    color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sidebar-images {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-images img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+/* Content */
+.content {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.planet-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.planet-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+}
+
+.planet-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.planet-card h3 {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
+
+.info-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px 0 0 10px;
+}
+
+.info-content {
+    padding: 20px;
+}
+
+.info-content h4 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.info-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.info-content button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f7c744;
+    color: #1a1a1a;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
