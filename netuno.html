@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Card Animado</title>
+    <style>
+        * {
+            font-family: Segoe UI;
+        }
+
+        body {
+            margin: 0;
+            color: #FFF;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        .card {
+            border-radius: 16px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 20px;
+            cursor: pointer;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(#333, #333);
+            transition: all .5s ease;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .card:hover {
+            background-image: linear-gradient(#666, #666);
+            transform: perspective(1000px) rotateY(10deg);
+        }
+
+        .card .img {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 170px;
+            background-image: url('neptune.png');
+            background-size: cover;
+            background-position: center;
+            transition: all .5s ease;
+            z-index: 2;
+            position: relative;
+            opacity: .8;
+            transform: perspective(1000px) translateZ(0px);
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px;
+        }
+
+        .card:hover .img {
+            transform: perspective(1000px) translateZ(40px);
+            opacity: 1;
+        }
+
+        .card .img span {
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 100;
+            font-style: italic;
+            transition: all .5s ease;
+        }
+
+        .card .content {
+            padding: 0px 20px;
+            height: 0;
+            opacity: 0;
+            transition: all .5s ease;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            transform: translateY(30px);
+        }
+
+        .card.open .content {
+            height: 200px;
+            padding: 20px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card .content p {
+            margin: 0;
+        }
+
+        .card .content .title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card .content .desc {
+            font-size: 14px;
+            font-weight: 100;
+            opacity: .8;
+            margin-top: 8px;
+        }
+
+        .card .content a {
+            display: inline-block;
+            margin-top: 10px; /* Adiciona espaço acima do botão */
+            text-decoration: none;
+        }
+
+        .card .content button {
+            background-color: #333;
+            border: none;
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color .3s ease;
+        }
+
+        .card .content button:hover {
+            background-color: #555;
+        }
+
+        .card .arrow {
+            padding: 15px;
+            transform: rotate(-180deg);
+            transition: all .5s ease;
+        }
+
+        .card.open .arrow {
+            transform: rotate(0);
+        }
+
+        .card .arrow span {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card" id="card">
+            <div class="img">
+                <span>Netuno</span>
+            </div>
+
+            <div class="content">
+                <span class="title">Netuno</span>
+                <p class="desc">Netuno é um planeta pertencente ao Sistema Solar. Trata-se do oitavo mais distante do Sol, o que confere a ele temperaturas muito baixas, em torno de -200 °C.</p>
+                <a href="https://www.google.com/amp/s/m.brasilescola.uol.com.br/amp/geografia/netuno-2.htm" target="_blank"><button>Mais</button></a>
+            </div>
+
+            <div class="arrow">
+                <span>&#8673;</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('card').addEventListener('click', function () {
+            this.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
