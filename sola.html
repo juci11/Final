@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .solar-system {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 1/1;
+            background-color: #1c1c1c;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #fff;
+        }
+        .orbit {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid #777;
+            width: 100%;
+            height: 100%;
+        }
+        .orbit:nth-child(2) { /* Mercury's orbit */
+            width: 25%;
+            height: 25%;
+            top: 37.5%;
+            left: 37.5%;
+        }
+        .orbit:nth-child(3) { /* Venus' orbit */
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+        }
+        .orbit:nth-child(4) { /* Earth's orbit */
+            width: 55%;
+            height: 55%;
+            top: 22.5%;
+            left: 22.5%;
+        }
+        .orbit:nth-child(5) { /* Mars' orbit */
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+        }
+        .orbit:nth-child(6) { /* Jupiter's orbit */
+            width: 85%;
+            height: 85%;
+            top: 7.5%;
+            left: 7.5%;
+        }
+        .orbit:nth-child(7) { /* Saturn's orbit */
+            width: 95%;
+            height: 95%;
+            top: 2.5%;
+            left: 2.5%;
+        }
+        .orbit:nth-child(8) { /* Uranus' orbit */
+            width: 105%;
+            height: 105%;
+            top: -2.5%;
+            left: -2.5%;
+        }
+        .orbit:nth-child(9) { /* Neptune's orbit */
+            width: 115%;
+            height: 115%;
+            top: -7.5%;
+            left: -7.5%;
+        }
+        .solar-system img {
+            position: absolute;
+            max-width: 100%;
+        }
+        .sun {
+            top: 45%;
+            left: 45%;
+            width: 10%;
+            z-index: 2;
+        }
+        .planet {
+            width: 8%;
+            z-index: 1;
+        }
+        .mercury {
+            top: 32%;
+            left: 55%;
+        }
+        .venus {
+            top: 35%;
+            left: 40%;
+        }
+        .earth {
+            top: 20%;
+            left: 65%;
+        }
+        .mars {
+            top: 50%;
+            left: 25%;
+        }
+        .jupiter {
+            top: 60%;
+            left: 70%;
+        }
+        .saturn {
+            top: 75%;
+            left: 50%;
+        }
+        .uranus {
+            top: 85%;
+            left: 35%;
+        }
+        .neptune {
+            top: 60%;
+            left: 10%;
+        }
+        .planet-labels {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .planet-labels img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            transition: transform 0.3s ease;
+        }
+        .planet-labels img:hover {
+            transform: scale(1.1);
+        }
+        .planet-labels a {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+        .planet-labels p {
+            margin-top: 5px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 600px) {
+            .solar-system {
+                max-width: 800px;
+            }
+            .sun {
+                width: 8%;
+            }
+            .planet {
+                width: 6%;
+            }
+            .planet-labels img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .solar-system {
+                max-width: 1000px;
+            }
+            .sun {
+                width: 7%;
+            }
+            .planet {
+                width: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Solar System</h1>
+
+    <div class="solar-system">
+        <!-- Orbits -->
+        <div class="orbit"></div> <!-- Mercury's Orbit -->
+        <div class="orbit"></div> <!-- Venus' Orbit -->
+        <div class="orbit"></div> <!-- Earth's Orbit -->
+        <div class="orbit"></div> <!-- Mars' Orbit -->
+        <div class="orbit"></div> <!-- Jupiter's Orbit -->
+        <div class="orbit"></div> <!-- Saturn's Orbit -->
+        <div class="orbit"></div> <!-- Uranus' Orbit -->
+        <div class="orbit"></div> <!-- Neptune's Orbit -->
+
+        <!-- Planets and Sun -->
+        <img src="sun.png" alt="Sun" class="sun">
+        <img src="mercury.png" alt="Mercury" class="planet mercury">
+        <img src="venus.png" alt="Venus" class="planet venus">
+        <img src="earth.png" alt="Earth" class="planet earth">
+        <img src="mars.png" alt="Mars" class="planet mars">
+        <img src="jupiter.png" alt="Jupiter" class="planet jupiter">
+        <img src="saturn.png" alt="Saturn" class="planet saturn">
+        <img src="uranus.png" alt="Uranus" class="planet uranus">
+        <img src="neptune.png" alt="Neptune" class="planet neptune">
+    </div>
+
+    <div class="planet-labels">
+        <a href="sol.html">
+            <img src="sun.png" alt="Sun">
+            <p>Sol</p>
+        </a>
+        <a href="mercury.html">
+            <img src="mercury.png" alt="Mercury">
+            <p>Mercury</p>
+        </a>
+        <a href="venus.html">
+            <img src="venus.png" alt="Venus">
+            <p>Venus</p>
+        </a>
+        <a href="terra.html">
+            <img src="earth.png" alt="Earth">
+            <p>Terra</p>
+        </a>
+        <a href="mars.html">
+            <img src="mars.png" alt="Mars">
+            <p>Marte</p>
+        </a>
+        <a href="jupiter.html">
+            <img src="jupiter.png" alt="Jupiter">
+            <p>Jupiter</p>
+        </a>
+        <a href="saturno.html">
+            <img src="saturn.png" alt="Saturn">
+            <p>Saturno</p>
+        </a>
+        <a href="urano.html">
+            <img src="uranus.png" alt="Uranus">
+            <p>Urano</p>
+        </a>
+        <a href="netuno.html">
+            <img src="neptune.png" alt="Neptune">
+            <p>Netuno</p>
+        </a>
+    </div>
+
+</body>
+</html>
