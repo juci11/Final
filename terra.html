@@ -21,6 +21,27 @@
             align-items: center;
             justify-content: center;
             background-color: #444;
+            position: relative;
+        }
+
+        .back-button {
+            position: fixed; /* Muda para 'fixed' para garantir que o botão apareça sempre */
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            border: none;
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color .3s ease;
+            text-decoration: none;
+            z-index: 1000; /* Garante que o botão apareça acima de outros elementos */
+        }
+
+        .back-button:hover {
+            background-color: #555;
         }
 
         .card {
@@ -146,6 +167,8 @@
 </head>
 <body>
 
+    <a href="sola.html" class="back-button">Voltar</a>
+
     <div class="container">
         <div class="card" id="card">
             <div class="img">
@@ -154,7 +177,7 @@
 
             <div class="content">
                 <span class="title">Terra</span>
-                <p class="desc">O Planeta Terra é um dos planetas que fazem parte do Sistema Solar e é o terceiro planeta mais próximo do Sol. A sua formação ocorreu há bilhões de anos, assim como a existência de vida aqui .</p>
+                <p class="desc">O Planeta Terra é um dos planetas que fazem parte do Sistema Solar e é o terceiro planeta mais próximo do Sol. A sua formação ocorreu há bilhões de anos, assim como a existência de vida aqui.</p>
                 <a href="https://www.google.com/amp/s/m.brasilescola.uol.com.br/amp/geografia/o-planeta-terra.htm" target="_blank"><button>Mais</button></a>
             </div>
 
